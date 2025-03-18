@@ -9,15 +9,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AlumnoFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->name(),
+            'correo' => $this->faker->unique()->safeEmail(),
+            'fecha_nacimiento' => $this->faker->date(),
+            'ciudad' => $this->faker->city(),
         ];
     }
 }
+
